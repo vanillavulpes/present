@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head><title>Happy Birthday</title></head>
+<style>
+	body{
+		background-color: #2975C6;
+	}
+</style>
+<script>
+	var lightColor = "off"; // off, red, green, or blue
+	var hbd = false; // happy birthday
+	var threeD = true; // true = art
+	var showArt = false;
+	var imageNumber = 1; // 1-4 with 0 representing blank screen
+	
+	function playMusic() {
+		var music = document.getElementById("ac");
+		music.play();
+	}	
+	
+	function pauseMusic() {
+		var music = document.getElementById("ac");
+		music.pause();
+	}
+	
+	function showWords() {
+		if (hbd == true){
+			hbd = false;
+		}
+		else if (hbd == false){
+			hbd = true;
+		}
+		changeImage();
+	}
+	
+	function changeThreeD() {
+		if (threeD == true){
+			threeD = false;
+		}
+		else if (threeD == false){
+			threeD = true;
+		}
+		changeImage();
+	}
+	
+	function changeLight() {
+		if (lightColor == "off"){
+			lightColor = "red";
+		}
+		else if (lightColor == "red"){
+			lightColor = "green";
+		}
+		else if (lightColor == "green"){
+			lightColor = "blue";
+		}
+		else if (lightColor == "blue"){
+			lightColor = "off";
+		}
+		changeImage();
+	}
+	
+	function nextImage() {
+		if (imageNumber == 1){
+			imageNumber = 2;
+		}
+		else if (imageNumber == 2){
+			imageNumber = 3;
+		}
+		else if (imageNumber == 3){
+			imageNumber = 4;
+		}
+		else if (imageNumber == 4){
+			imageNumber = 1;
+		}
+		changeImage();
+	}
+	
+	function lastImage() {
+		if (imageNumber == 1){
+			imageNumber = 4;
+		}
+		else if (imageNumber == 2){
+			imageNumber = 1;
+		}
+		else if (imageNumber == 3){
+			imageNumber = 2;
+		}
+		else if (imageNumber == 4){
+			imageNumber = 3;
+		}
+		changeImage();
+	}
+	
+	function showImage() {
+		if (showArt == true){
+			showArt = false;
+		}
+		else if (showArt == false){
+			showArt = true;
+		}
+		changeImage();
+	}
+	
+	function changeImage() {
+		var image = document.getElementById('ds');
+		if (lightColor == "off"){
+			if (hbd == true){
+				if (threeD == true){
+					if (showArt == true){
+						if (imageNumber == 1){
+							image.src = "img/on/pic1/hbd/3ds_on_one_hbd.png";
+						}
+						else if (imageNumber == 2){
+							image.src = "img/on/pic2/hbd/3ds_on_two_hbd.png";
+						}
+						else if (imageNumber == 3){
+							image.src = "img/on/pic3/hbd/3ds_on_three_hbd.png";
+						}
+						else if (imageNumber == 4){
+							image.src = "img/on/pic4/hbd/3ds_on_four_hbd.png";
+						}
+					}
+					else if (showArt == false){
+						image.src = "img/on/just_hbd/3ds.png";
+					}
+				}
+				else if (threeD == false){
+					if (showArt == true){
+						image.src = "img/off/hbd/3ds_off_hbd.png";
+					}
+					else if (showArt == false){
+						image.src = "img/off/just_hbd/3ds.png";
+					}
+				}
+			}
+			else if (hbd == false){
+				if (threeD == true){
+					if (showArt == true){
+						if (imageNumber == 1){
+							image.src = "img/on/pic1/no_hbd/3ds_on_one.png";
+						}
+						else if (imageNumber == 2){
+							image.src = "img/on/pic2/no_hbd/3ds_on_two.png";
+						}
+						else if (imageNumber == 3){
+							image.src = "img/on/pic3/no_hbd/3ds_on_three.png";
+						}
+						else if (imageNumber == 4){
+							image.src = "img/on/pic4/no_hbd/3ds_on_four.png";
+						}
+					}
+					else if (showArt == false){
+						image.src = "img/on/just_light/3ds.png";
+					}
+				}
+				else if (threeD == false){
+					if (showArt == true){
+						image.src = "img/off/no_hbd/3ds_off.png";
+					}
+					else if (showArt == false){
+						image.src = "img/off/just_light/3ds.png";
+					}
+				}
+			}
+		}
+
+		else if (lightColor == "red"){
+			if (hbd == true){
+				if (threeD == true){
+					if (showArt == true){
+						if (imageNumber == 1){
+							image.src = "img/on/pic1/hbd/3ds_on_one_hbd_r.png";
+						}
+						else if (imageNumber == 2){
+							image.src = "img/on/pic2/hbd/3ds_on_two_hbd_r.png";
+						}
+						else if (imageNumber == 3){
+							image.src = "img/on/pic3/hbd/3ds_on_three_hbd_r.png";
+						}
+						else if (imageNumber == 4){
+							image.src = "img/on/pic4/hbd/3ds_on_four_hbd_r.png";
+						}
+					}
+					else if (showArt == false){
+						image.src = "img/on/just_hbd/3ds_r.png";
+					}
+				}
+				else if (threeD == false){
+					if (showArt == true){
+						image.src = "img/off/hbd/3ds_off_hbd_r.png";
+					}
+					else if (showArt == false){
+						image.src = "img/off/just_hbd/3ds_r.png";
+					}
+				}
+			}
+			else if (hbd == false){
+				if (threeD == true){
+					if (showArt == true){
+						if (imageNumber == 1){
+							image.src = "img/on/pic1/no_hbd/3ds_on_one_r.png";
+						}
+						else if (imageNumber == 2){
+							image.src = "img/on/pic2/no_hbd/3ds_on_two_r.png";
+						}
+						else if (imageNumber == 3){
+							image.src = "img/on/pic3/no_hbd/3ds_on_three_r.png";
+						}
+						else if (imageNumber == 4){
+							image.src = "img/on/pic4/no_hbd/3ds_on_four_r.png";
+						}
+					}
+					else if (showArt == false){
+						image.src = "img/on/just_light/3ds_r.png";
+					}
+				}
+				else if (threeD == false){
+					if (showArt == true){
+						image.src = "img/off/no_hbd/3ds_off_r.png";
+					}
+					else if (showArt == false){
+						image.src = "img/off/just_light/3ds_r.png";
+					}
+				}
+			}
+		}
+
+		else if (lightColor == "green"){
+			if (hbd == true){
+				if (threeD == true){
+					if (showArt == true){
+						if (imageNumber == 1){
+							image.src = "img/on/pic1/hbd/3ds_on_one_hbd_g.png";
+						}
+						else if (imageNumber == 2){
+							image.src = "img/on/pic2/hbd/3ds_on_two_hbd_g.png";
+						}
+						else if (imageNumber == 3){
+							image.src = "img/on/pic3/hbd/3ds_on_three_hbd_g.png";
+						}
+						else if (imageNumber == 4){
+							image.src = "img/on/pic4/hbd/3ds_on_four_hbd_g.png";
+						}
+					}
+					else if (showArt == false){
+						image.src = "img/on/just_hbd/3ds_g.png";
+					}
+				}
+				else if (threeD == false){
+					if (showArt == true){
+						image.src = "img/off/hbd/3ds_off_hbd_g.png";
+					}
+					else if (showArt == false){
+						image.src = "img/off/just_hbd/3ds_g.png";
+					}
+				}
+			}
+			else if (hbd == false){
+				if (threeD == true){
+					if (showArt == true){
+						if (imageNumber == 1){
+							image.src = "img/on/pic1/no_hbd/3ds_on_one_g.png";
+						}
+						else if (imageNumber == 2){
+							image.src = "img/on/pic2/no_hbd/3ds_on_two_g.png";
+						}
+						else if (imageNumber == 3){
+							image.src = "img/on/pic3/no_hbd/3ds_on_three_g.png";
+						}
+						else if (imageNumber == 4){
+							image.src = "img/on/pic4/no_hbd/3ds_on_four_g.png";
+						}
+					}
+					else if (showArt == false){
+						image.src = "img/on/just_light/3ds_g.png";
+					}
+				}
+				else if (threeD == false){
+					if (showArt == true){
+						image.src = "img/off/no_hbd/3ds_off_g.png";
+					}
+					else if (showArt == false){
+						image.src = "img/off/just_light/3ds_g.png";
+					}
+				}
+			}
+		}
+
+		else if (lightColor == "blue"){
+			if (hbd == true){
+				if (threeD == true){
+					if (showArt == true){
+						if (imageNumber == 1){
+							image.src = "img/on/pic1/hbd/3ds_on_one_hbd_b.png";
+						}
+						else if (imageNumber == 2){
+							image.src = "img/on/pic2/hbd/3ds_on_two_hbd_b.png";
+						}
+						else if (imageNumber == 3){
+							image.src = "img/on/pic3/hbd/3ds_on_three_hbd_b.png";
+						}
+						else if (imageNumber == 4){
+							image.src = "img/on/pic4/hbd/3ds_on_four_hbd_b.png";
+						}
+					}
+					else if (showArt == false){
+						image.src = "img/on/just_hbd/3ds_b.png";
+					}
+				}
+				else if (threeD == false){
+					if (showArt == true){
+						image.src = "img/off/hbd/3ds_off_hbd_b.png";
+					}
+					else if (showArt == false){
+						image.src = "img/off/just_hbd/3ds_b.png";
+					}
+				}
+			}
+			else if (hbd == false){
+				if (threeD == true){
+					if (showArt == true){
+						if (imageNumber == 1){
+							image.src = "img/on/pic1/no_hbd/3ds_on_one_b.png";
+						}
+						else if (imageNumber == 2){
+							image.src = "img/on/pic2/no_hbd/3ds_on_two_b.png";
+						}
+						else if (imageNumber == 3){
+							image.src = "img/on/pic3/no_hbd/3ds_on_three_b.png";
+						}
+						else if (imageNumber == 4){
+							image.src = "img/on/pic4/no_hbd/3ds_on_four_b.png";
+						}
+					}
+					else if (showArt == false){
+						image.src = "img/on/just_light/3ds_b.png";
+					}
+				}
+				else if (threeD == false){
+					if (showArt == true){
+						image.src = "img/off/no_hbd/3ds_off_b.png";
+					}
+					else if (showArt == false){
+						image.src = "img/off/just_light/3ds_b.png";
+					}
+				}
+			}
+		}
+	}
+</script>
+<body>
+	<p style="color:#C1CDD1">Try clicking things. You may or may not need to zoom out. ~Anevie</p>
+	<video id="ac" controls="controls" hidden="true" loop="true">
+	  <source src="mus/001-main-theme.mp3" type="audio/mpeg">
+	</video>
+	<img id="ds" src="img/on/just_light/3ds.png" width="1920" height="1080" alt="3DS" usemap="#buttons">
+	<map name="buttons">
+		<area shape="rect" coords="1795,610,1835,810" onClick="changeThreeD()" alt="slider">
+		<area shape="rect" coords="1750,1005,1775,1060" onClick="changeLight()" alt="light">
+		<area shape="rect" coords="205,185,245,220" onClick="showWords()" alt="topleft">
+		<area shape="rect" coords="1695,185,1730,220" onClick="showWords()" alt="topright">
+		<area shape="rect" coords="205,915,245,960" onClick="showWords()" alt="botleft">
+		<area shape="rect" coords="1695,915,1730,960" onClick="showWords()" alt="botright">
+		<area shape="circle" coords="1467,140,25" onClick="nextImage()" alt="rightCircle">
+		<area shape="circle" coords="470,140,25" onClick="lastImage()" alt="leftCircle">
+		<area shape="circle" coords="968,138,35" onClick="showImage()" alt="Camera">
+		<area shape="circle" coords="225,550,50" onClick="playMusic()" alt="leftSpeaker">
+		<area shape="circle" coords="1715,550,50" onClick="pauseMusic()" alt="rightSpeaker">
+	</map>
+</body>
+</html>
